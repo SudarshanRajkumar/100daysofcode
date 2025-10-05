@@ -1,1 +1,0 @@
-{"name":"Local: problem1818A","url":"/Users/sudarshan_rk/100daysofcode/tle/problem1818A.cpp","tests":[{"id":1758853360792,"input":"5 4\n++++\n+--+\n++-+\n+-++\n++++","output":"2"},{"id":1758853793768,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/sudarshan_rk/100daysofcode/tle/problem1818A.cpp","group":"local","local":true}
