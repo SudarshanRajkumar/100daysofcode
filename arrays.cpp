@@ -145,3 +145,5 @@
 //     }
 // };
 
+//7th OCTOBER
+//REVERSE AN ARRAY;
