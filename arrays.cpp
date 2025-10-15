@@ -147,3 +147,48 @@
 
 //7th OCTOBER
 //REVERSE AN ARRAY;
+/*#include <algorithm> // Include this for std::reverse
+
+class Solution {
+public:
+    vector<int> reverseArray(const vector<int>& arr) {
+        vector<int> num = arr; // Copy the original array
+        std::reverse(num.begin(), num.end()); // Reverse the copied array
+        return num;
+    }
+};  */
+//437. Find the Unique Element in an Array
+ /*class Solution {
+    public:
+        int findUniqueElement(vector<int>& nums){   
+        int n=nums.size();
+        int ans=0;
+        for(int i=0;i<n;i++){
+        ans^=nums[i];}
+        return ans;
+        
+        };*/
+//439. Sort an Array of 0s and 1s
+    // class Solution {
+    // public:
+    //     vector<int> sortArray(vector<int>& nums) {
+    //         // Implement the function here.
+    //         int countones=0;
+    //         int countzeroes=0;
+    //         int n=nums.size();
+    //         vector<int>arr=nums;
+    //         for(int i=0;i<n;i++){
+    //             if(nums[i]==0){
+    //                 countzeroes++;
+    //             }
+    //             if(nums[i]==1){
+    //                 countones++;
+    //             }
+
+    //         }
+    //         fill(arr.begin(),arr.begin()+countzeroes,0);
+    //         fill(arr.begin()+countzeroes,arr.end(),1);
+    //         return arr;
+    //     }
+    // };
+        
