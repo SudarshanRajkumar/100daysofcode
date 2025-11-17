@@ -141,3 +141,110 @@ int main() {
 //HIGHEST OCCURENCE ELEMENT IN AN ARRAY
 
 //BRUTE FORCE 
+
+/* class Solution {
+public:
+    // Function to get the highest occurring element in array nums
+    int mostFrequentElement(vector<int> &nums) {
+        
+        int n = nums.size();           // Size of the array
+        int maxFreq = 0;               // Stores maximum frequency found so far
+        int maxEle;                    // Stores element with maximum frequency
+        
+        vector<bool> visited(n, false); // Keeps track of visited elements
+        
+        // Outer loop → pick each element one by one
+        for (int i = 0; i < n; i++) {
+            
+            // Skip if this element was already counted
+            if (visited[i]) continue;
+            
+            int freq = 0;  // To count frequency of current element
+            
+            // Inner loop → count how many times nums[i] appears
+            for (int j = i; j < n; j++) {
+                if (nums[i] == nums[j]) {
+                    freq++;
+                    visited[j] = true;  // Mark as visited
+                }
+            }
+            
+            // If this element has a higher frequency → update max
+            if (freq > maxFreq) {
+                maxFreq = freq;
+                maxEle = nums[i];
+            }
+            // If frequencies are equal → choose smaller element
+            else if (freq == maxFreq) {
+                maxEle = min(maxEle, nums[i]);
+            }
+        }
+        
+        // Return the element with highest frequency
+        return maxEle;
+    }
+};
+
+/*
+---------------------------------------------
+Time Complexity  : O(n^2)
+   → Two nested loops (each up to size n)
+
+Space Complexity : O(n)
+   → Extra visited[] array of size n
+
+If n ≤ 10^4, then space used ≈ O(10^4 + 1)
+---------------------------------------------
+*/
+
+
+//optimized solution
+
+
+class Solution {
+public:
+    int mostFrequentElement(vector<int> &nums) {
+        int n = nums.size();
+        int maxFreq = 0, maxEle;
+
+        unordered_map<int, int> mpp;  // stores frequency (O(1) average)
+
+        // count frequency
+        for (int i = 0; i < n; i++) {
+            mpp[nums[i]]++;
+        }
+
+        // find element with highest frequency
+        for (auto it : mpp) {
+            if (it.second > maxFreq) {
+                maxFreq = it.second;
+                maxEle = it.first;
+            }
+            else if (it.second == maxFreq) {
+                maxEle = min(maxEle, it.first);
+            }
+        }
+
+        return maxEle;
+    }
+}; 
+int main() {
+    int n;
+    cin >> n;                  // input array size
+    vector<int> nums(n);
+
+    for (int i = 0; i < n; i++) 
+        cin >> nums[i];        // input array elements
+
+    Solution obj;
+    cout << obj.mostFrequentElement(nums);  // output result
+    return 0;
+}
+
+
+
+
+
+
+
+

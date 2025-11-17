@@ -56,6 +56,75 @@
 // }
 
 //2nd Problem
-#include<bits/stdc++.h>
-int main()
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int t; 
+//     cin >> t; // number of test cases
+
+//     while (t--) {
+//         int a, b, c, d;
+//         cin >> a >> b >> c >> d; // read stick lengths
+        
+//         // Check if all sides are equal
+//         if (a == b && b == c && c == d)
+//             cout << "YES" << endl;
+//         else
+//             cout << "NO" << endl;
+//     }
+
+//     return 0;
+// }
+
+// 
+#include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
+
+vector<ll> s(int lim = 1000) {
+    vector<bool> f(lim + 1, true);
+    vector<ll> p;
+    f[0] = f[1] = false;
+    for (int i = 2; i * i <= lim; i++) {
+        if (f[i]) {
+            for (int j = i * i; j <= lim; j += i)
+                f[j] = false;
+        }
+    }
+    for (int i = 2; i <= lim; i++)
+        if (f[i]) p.push_back(i);
+    return p;
+}
+
+void g(vector<ll>& p) {
+    int n; 
+    cin >> n;
+    vector<ll> a(n);
+    for (auto &x : a) cin >> x;
+
+    for (ll q : p) {
+        bool ok = true;
+        for (ll x : a) {
+            if (x % q != 0) {
+                ok = false;
+                break;
+            }
+        }
+        if (!ok) {
+            cout << q << endl;
+            return;
+        }
+    }
+    cout << -1 << endl;
+}
+    
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    auto p = s();
+    int t; 
+    cin >> t;
+    while (t--) g(p);
+}
