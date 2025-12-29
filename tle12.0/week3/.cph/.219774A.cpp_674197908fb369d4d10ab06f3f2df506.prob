@@ -1,0 +1,1 @@
+{"name":"Local: 219774A","url":"/Users/sudarshan_rk/100daysofcode/tle12.0/week3/219774A.cpp","tests":[{"id":1765819388045,"input":"4\n7 2 1 3\n","output":"13\n"},{"id":1765819399215,"input":"3\n-1 2 -3\n","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/sudarshan_rk/100daysofcode/tle12.0/week3/219774A.cpp","group":"local","local":true}
